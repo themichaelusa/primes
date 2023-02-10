@@ -1,5 +1,3 @@
-import math
-import pathlib
 from collections import defaultdict
 
 MAX_INT = (2**63) - 1
@@ -41,6 +39,7 @@ def prime_frequency_map(fpath):
                 freq_map[primes_map[byte]] += 1
                 byte_array.append(byte)
 
+    """
     # get occurence map of valid sequences e.g prime multiples
     occurence_map_largest = defaultdict(int)
     occurence_map_mults_cnts = defaultdict(int)
@@ -69,27 +68,8 @@ def prime_frequency_map(fpath):
     occ_seqs_cnts = list(occurence_map_seqs.items())
     occ_seqs_cnts.sort(key = lambda l: len(l[1]))
     total_unique_cnts = [(occ[0], len(occ[1])-1) for occ in occ_seqs_cnts]
-
-    #occ_seqs_cnts.reverse()
-    #total_unique_cnts = sum([len(occ[1])-1 for occ in occ_seqs_cnts])
-    #print(total_unique_cnts)
-
     """
-    occ_cnts = list(occurence_map_mults_cnts.items())
-    occ_cnts.sort(key = lambda l: l[1])
-    occ_cnts.reverse()
-    total_unique_cnts = sum([occ[1] for occ in occ_cnts])
-    """
-
-    #print("occurence_map_largest", occurence_map_largest)
-    #print("occurence_map_mults_cnts", occurence_map_mults_cnts)
-
-    # get primes as keys
-    #fq = list(freq_map.items())
-    #fq.sort(key = lambda l: l[1])
-    #return {"freq" : fq, "product_freq" : None}
-
 
 if __name__ == '__main__':
-    print(prime_frequency_map('./test.csv'))
+    print(prime_frequency_map('./test.png'))
 
